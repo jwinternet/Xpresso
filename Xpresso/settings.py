@@ -31,6 +31,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # My apps.
+    'horror_show',
+
+    # Third party apps.
+
+    # Default Django apps.
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +60,7 @@ ROOT_URLCONF = 'Xpresso.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'horror_show/templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {

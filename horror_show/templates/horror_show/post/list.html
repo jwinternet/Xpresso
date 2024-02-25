@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+    {% extends "horror_show/base.html" %}
+    
+    {% block title %}Horror Show{% endblock %}
+    
+    {% block content %}
+        <h1>Horror Show</h1>
+        {% for post in posts %}
+            <h2>
+                <a href="{% url 'horror_show:post_detail' post.id %}">
+                    {{ post.title }}
+                </a>
+            </h2>
+            <p class="date">
+                Published {{ post.publish }} by {{ post.author }}
+            </p>
+            {{ post.body|truncatewords:30|linebreaks }}
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>
